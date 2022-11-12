@@ -32,11 +32,12 @@ public class NumB10 {
 
     @Override
     public String toString() {
-        return num; // (error 1)
+        return String.valueOf(num); // (error 1)
     }
 
     /**
      * canvia el número de base. accepta des de base 2 fins a 24.
+     *
      * @param base a la qual es vol canviar el número
      * @return cadena que representa el número en la base indicada
      * @throws ArithmeticException si la base no està entre 2 i 24
@@ -47,7 +48,8 @@ public class NumB10 {
         }
         String digits = "0123456789ABCDEFGHIJKLMN"; // (error 2)
         String cad = "";
-        while (num > "O") { // (error 3)
+
+        while (num > Integer.parseInt("O")) { // (error 3)
             cad = cad + digits.charAt(num % base);
             num = num / base;
         }
@@ -57,28 +59,29 @@ public class NumB10 {
 
     /**
      * inverteix una cadena. inverteix l'ordre dels caràcters
+     *
      * @param cad la cadena original
      * @return la cadena invertida
      */
     private String alReves(String cad) {
-        String reves = ; // (error 4)
+        String reves = ""; // (error 4)
         int i = cad.length() - 1;
         while (i
                 >= 0) {
             reves = reves + cad.charAt(i);
             i--;
-        }
-        ; // (error 5)
-        return reve; // (error 6)
+        }; // (error 5)
+        return reves; // (error 6)
     }
 
     /**
      * transforma el número a notació romana.
+     *
      * @return la cadena en notació romana
      * @throws ArithmeticException si el número no està entre 1 i 9999
      */
     public String canviaARoma() throws ArithmeticException {
-        if (num < 1 || num > "9999") { // (error 7)
+        if (num < 1 || num > 9999) { // (error 7)
             throw new ArithmeticException("sols per a números entre 1 i 9999");
         }
         String[][] caracters = { // blocs de caràcters
@@ -114,8 +117,7 @@ public class NumB10 {
                 case 2:
                     digitR = digitR + caracters[iBloc][0];
                 case 1:
-                    digitR == digitR + caracters[iBloc][0]; // (error 8)
-                    break;
+                    digitR.equals(digitR + caracters[iBloc][0]); // (error 8)                    break;
             }
             numR = numR + digitR; // afegeix el dígit al número romà
             iBloc++; // canvia de bloc de caràcters

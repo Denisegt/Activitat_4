@@ -8,13 +8,12 @@ package canvidbase;
  *
  * @author DeniseGT
  */
-public class CanviDbase {
+public class Inici {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+           }
     
 }
